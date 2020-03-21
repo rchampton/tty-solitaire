@@ -1,11 +1,12 @@
 # My TODO
 - Win screen love
 - Wrap around left-right motion
+- Skip blank column on top row when moving left/right
 
 # Done
 - Navigation keys single hand add: 
 	- asdw for left down right up respectively
-	- m, n should be remapped to e, r
+	- map m, n to e, r
 	- f select in addition to spacebar
 
 
