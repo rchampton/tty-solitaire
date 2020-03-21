@@ -1,3 +1,17 @@
+# My TODO
+- Win screen love
+- Wrap around left-right motion
+
+# Done
+- Navigation keys single hand add: 
+	- asdw for left down right up respectively
+	- m, n should be remapped to e, r
+	- f select in addition to spacebar
+
+
+
+
+
 # TODO
 - signal handling
 - turn either 1 or 3 cards to the waste pile (configurable)

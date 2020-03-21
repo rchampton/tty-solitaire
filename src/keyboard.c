@@ -70,6 +70,7 @@ static void handle_card_movement(struct cursor *cursor) {
     }
     if (term_size_ok()) {
       switch (key) {
+		case 'a': case 's': case 'd': case 'w':
       case 'h':
       case 'j':
       case 'k':
@@ -82,7 +83,7 @@ static void handle_card_movement(struct cursor *cursor) {
         cursor_move(cursor, cursor_direction(key));
         draw_cursor(cursor);
         break;
-      case 'm':
+      case 'm': case 'e':
         if (origin == cursor_stack(cursor) && maneuvre_stack(*origin)) {
           for (struct stack *i = *origin; i && i->next; i = i->next) {
             if (i->next->card->face == EXPOSED &&
@@ -107,7 +108,7 @@ static void handle_card_movement(struct cursor *cursor) {
           }
         }
         break;
-      case 'n':
+      case 'n': case 'r': 
         if (origin == cursor_stack(cursor) && maneuvre_stack(*origin)) {
           for (struct stack *i = (*origin)->next; i; i = i->next) {
             if (i->next) {
@@ -137,7 +138,7 @@ static void handle_card_movement(struct cursor *cursor) {
         }
         break;
 
-      case KEY_SPACEBAR:;
+      case KEY_SPACEBAR: case 'f':;
         /* http://www.mail-archive.com/gcc-bugs@gcc.gnu.org/msg259382.html */
         struct stack **destination = cursor_stack(cursor);
         int _marked_cards_count = marked_cards_count(*origin);
@@ -214,6 +215,7 @@ void keyboard_event(int key) {
   }
   if (term_size_ok()) {
     switch (key) {
+	case 'a': case 's': case 'd': case 'w':
     case 'h':
     case 'j':
     case 'k':
@@ -226,7 +228,7 @@ void keyboard_event(int key) {
       cursor_move(cursor, cursor_direction(key));
       draw_cursor(cursor);
       break;
-    case KEY_SPACEBAR:
+    case KEY_SPACEBAR: case 'f':
       if (cursor_on_stock(cursor)) {
         if (stack_empty(deck->stock)) {
           if (game.passes_through_deck_left >= 1) {

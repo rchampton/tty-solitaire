@@ -92,16 +92,16 @@ void cursor_move(struct cursor *cursor, enum movement movement) {
 
 enum movement cursor_direction(int key) {
   switch (key) {
-  case 'h':
+  case 'h': case 'a':
   case KEY_LEFT:
     return(LEFT);
-  case 'j':
+  case 'j': case 's':
   case KEY_DOWN:
     return(DOWN);
-  case 'k':
+  case 'k': case 'w':
   case KEY_UP:
     return(UP);
-  case 'l':
+  case 'l': case 'd':
   case KEY_RIGHT:
     return(RIGHT);
   default:
