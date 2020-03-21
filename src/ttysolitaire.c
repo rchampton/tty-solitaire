@@ -83,9 +83,6 @@ int main(int argc, char *argv[]) {
       return(0);
     }
     if (term_size_ok()) {
-      clear();
-      draw_greeting();
-      refresh();
       if (key == KEY_SPACEBAR) {
         clear();
         refresh();
@@ -112,10 +109,10 @@ int main(int argc, char *argv[]) {
 
 void draw_greeting() {
   mvprintw(8, 26, "Welcome to tty-solitaire.");
-  mvprintw(10, 23, "Move with the arrow keys or hjkl.");
-  mvprintw(11, 19, "Use the space bar to mark and move cards.");
-  mvprintw(12, 16, "After marking a card you can use m to increase ");
-  mvprintw(13, 17, "and n to decrease the number of marked cards.");
+  mvprintw(10, 23, "Move with the arrow keys, asdw, or hjkl.");
+  mvprintw(11, 19, "Use the space bar or f to mark and move cards.");
+  mvprintw(12, 16, "After marking a card you can use m or e to increase ");
+  mvprintw(13, 17, "and n or r to decrease the number of marked cards.");
   mvprintw(15, 19, "Press the space bar to play or q to quit.");
 }
 
